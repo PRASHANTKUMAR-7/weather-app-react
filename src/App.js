@@ -13,12 +13,26 @@ function App() {
 
   useEffect(() => {
     const fetchWeatherData=async()=> {
-      const data= await getInfo("paris");
+      const data= await getInfo("paris", units);
      setWeather(data);
     };
 
     fetchWeatherData();
-  },[]);
+  },[units]);
+
+// function to handle units dynamically
+
+const handleUnitsClick = (e) => {
+  const button = e.currentTarget;
+  const currentUnit=button.innerText.slice(1);
+
+  const isCelsius = currentUnit === "C";
+  button.innerText= isCelsius ? "℉" : "℃";
+  setUnits( isCelsius ? "metric" : "imperial");
+};
+
+
+
 
   return (
     <div className="app" style={{backgroundImage: `url(${coldbg})`}}>
@@ -29,7 +43,8 @@ function App() {
           <div className="container">
           <div className="section section__inputs">
             <input type="text" name="city" placeholder="Enter City Name..."/>
-            <button>°F</button>
+            
+            <button onClick={(e)=> handleUnitsClick(e)}>°F</button>
           </div>
           <div className="section section__temperature">
             <div className="icon">
@@ -38,11 +53,13 @@ function App() {
               <h3>{weather.description}</h3>
             </div>
             <div className="temperature">
-              <h1>{`${weather.temp.tofixed()}℃`}</h1>
+              <h1>{`${weather.temp.toFixed()} °${units==="metric" ?
+                "C" : "F"
+              }`}</h1>
             </div>
           </div>
           {/* bottom description */}
-          <Description weather={weather} />
+          <Description weather={weather} units={units} />
         </div>
         )}
       </div>

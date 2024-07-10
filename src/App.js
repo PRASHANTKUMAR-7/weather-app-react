@@ -3,7 +3,17 @@ import coldbg from "./assets/cold.jpg";
 import hazebg from "./assets/haze.jpg";
 import rainbg from "./assets/rainy.jpeg";
 import Description from "./components/Description";
+import { useEffect } from "react";
+import { getInfo } from "./weatherService";
 function App() {
+  useEffect(()=> {
+    const fetchWeatherData=async()=> {
+      const data= await getInfo("Delhi");
+    };
+
+    fetchWeatherData();
+  },[]);
+  
   return (
     <div className="app" style={{backgroundImage: `url(${coldbg})`}}>
       <div className="overlay">

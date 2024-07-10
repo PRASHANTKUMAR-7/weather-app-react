@@ -27,6 +27,9 @@
 .description__card-icon>small{
     text-transform: capitalize; 
 }
+
+/*below 1024px we have 2 column code*/
+
  @media screen and (max-width: 1024px){
     .section__description{
 

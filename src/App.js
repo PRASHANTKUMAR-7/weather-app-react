@@ -3,12 +3,18 @@ import coldbg from "./assets/cold.jpg";
 import hazebg from "./assets/haze.jpg";
 import rainbg from "./assets/rainy.jpeg";
 import Description from "./components/Description";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getInfo } from "./weatherService";
+
+
 function App() {
+  const [weather, setWeather]= useState(null);
+
+
   useEffect(() => {
     const fetchWeatherData=async()=> {
       const data= await getInfo("paris");
+     setWeather(data);
     };
 
     fetchWeatherData();
@@ -17,7 +23,10 @@ function App() {
   return (
     <div className="app" style={{backgroundImage: `url(${coldbg})`}}>
       <div className="overlay">
-        <div className="container">
+        {
+          // now container will render when weather will be there because we put container div in weather 
+        weather && (
+          <div className="container">
           <div className="section section__inputs">
             <input type="text" name="city" placeholder="Enter City Name..."/>
             <button>°F</button>
@@ -35,6 +44,7 @@ function App() {
           {/* bottom description */}
           <Description/>
         </div>
+        )}
       </div>
     </div>
   );

@@ -6,14 +6,14 @@ import Description from "./components/Description";
 import { useEffect } from "react";
 import { getInfo } from "./weatherService";
 function App() {
-  useEffect(()=> {
+  useEffect(() => {
     const fetchWeatherData=async()=> {
-      const data= await getInfo("Delhi");
+      const data= await getInfo("paris");
     };
 
     fetchWeatherData();
   },[]);
-  
+
   return (
     <div className="app" style={{backgroundImage: `url(${coldbg})`}}>
       <div className="overlay">

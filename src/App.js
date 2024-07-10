@@ -9,7 +9,7 @@ import { getInfo } from "./weatherService";
 
 function App() {
   const [weather, setWeather]= useState(null);
-
+  const[units, setUnits]=useState("metric");
 
   useEffect(() => {
     const fetchWeatherData=async()=> {
@@ -33,16 +33,16 @@ function App() {
           </div>
           <div className="section section__temperature">
             <div className="icon">
-              <h3>Varanasi,UP</h3>
-              <img src="https://openweathermap.org/img/wn/02d@2x.png"alt="weather-icon" />
-              <h3>Cloudy</h3>
+              <h3>{`${weather.name}, ${weather.country}`}</h3>
+              <img src={weather.iconUrl}alt="weather-icon" />
+              <h3>{weather.description}</h3>
             </div>
             <div className="temperature">
-              <h1>34 °C</h1>
+              <h1>{`${weather.temp.tofixed()}℃`}</h1>
             </div>
           </div>
           {/* bottom description */}
-          <Description/>
+          <Description weather={weather} />
         </div>
         )}
       </div>

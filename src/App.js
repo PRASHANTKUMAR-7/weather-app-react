@@ -2,7 +2,7 @@
 
 import hotbg from "./assets/hot.jpg";
 import coldbg from "./assets/cold.jpg";
-import hazebg from "./assets/haze.jpg";
+import hazebg from "./assets/haze1.jpeg";
 
 import Description from "./components/Description";
 import { useEffect, useState } from "react";

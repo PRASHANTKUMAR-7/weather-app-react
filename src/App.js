@@ -24,13 +24,13 @@ function App() {
 
 const handleUnitsClick = (e) => {
   const button = e.currentTarget;
-  const currentUnit=button.innerText.slice(1);
+  const currentUnit = button.innerText.slice(1);
 
   const isCelsius = currentUnit === "C";
-  button.innerText= isCelsius ? "℉" : "℃";
-  setUnits( isCelsius ? "metric" : "imperial");
+  button.innerText = isCelsius ? "°F" : "°C";
+  setUnits(isCelsius ? "metric" : "imperial");
 };
-
+// **************************
 
 
 
@@ -42,9 +42,8 @@ const handleUnitsClick = (e) => {
         weather && (
           <div className="container">
           <div className="section section__inputs">
-            <input type="text" name="city" placeholder="Enter City Name..."/>
-            
-            <button onClick={(e)=> handleUnitsClick(e)}>°F</button>
+            <input type="text" name="city" placeholder="Enter City Name..."/>            
+            <button onClick={(e) => handleUnitsClick(e)}>°F</button>
           </div>
           <div className="section section__temperature">
             <div className="icon">
@@ -53,8 +52,7 @@ const handleUnitsClick = (e) => {
               <h3>{weather.description}</h3>
             </div>
             <div className="temperature">
-              <h1>{`${weather.temp.toFixed()} °${units==="metric" ?
-                "C" : "F"
+              <h1>{`${weather.temp.toFixed()} °${units === "metric" ? "C" : "F"
               }`}</h1>
             </div>
           </div>

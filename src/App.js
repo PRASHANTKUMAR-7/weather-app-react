@@ -24,7 +24,7 @@ function App() {
 
     // dynamic background
 
-      const threshold = units === "metric" ? 20 : 60;
+      const threshold = units === "metric" ? 20 : 50;
       if(data.temp< 32 ) 
         if(data.temp< threshold) setBg(coldbg);
         else setBg(hazebg)

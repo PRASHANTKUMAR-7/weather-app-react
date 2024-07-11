@@ -20,7 +20,7 @@ function App() {
     fetchWeatherData();
   },[units]);
 
-// function to handle units dynamically
+// function to handle units dynamically Alt+0176 for ° "degree"
 
 const handleUnitsClick = (e) => {
   const button = e.currentTarget;

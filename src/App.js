@@ -4,6 +4,8 @@ import hotbg from "./assets/hot.jpg";
 import coldbg from "./assets/cold.jpg";
 import hazebg from "./assets/haze1.jpeg";
 
+// ********************************************
+
 import Description from "./components/Description";
 import { useEffect, useState } from "react";
 import { getInfo } from "./weatherService";
@@ -21,13 +23,14 @@ function App() {
       setWeather(data);
 
     // dynamic background
+
       const threshold = units === "metric" ? 20 : 60;
       if(data.temp< 32 ) 
         if(data.temp< threshold) setBg(coldbg);
         else setBg(hazebg)
       else setBg(hotbg);
-
     };
+    // ********************************************************
 
     fetchWeatherData();
   },[units, city]);
@@ -42,15 +45,17 @@ const handleUnitsClick = (e) => {
   button.innerText = isCelsius ? "°F" : "°C";
   setUnits(isCelsius ? "metric" : "imperial");
 };
-// **************************
+// ***********************************************************
 
 // handling test field
+
 const enterKetPressed = (e) => {
   if(e.keyCode === 13){
     setCity(e.currentTarget.value);
     e.currentTarget.blur();
   }
 };
+// *************************************************************
 
 
   return (

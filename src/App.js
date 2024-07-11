@@ -3,8 +3,6 @@
 import hotbg from "./assets/hot.jpg";
 import coldbg from "./assets/cold.jpg";
 import hazebg from "./assets/haze.jpg";
-import rainbg from "./assets/rainy.jpeg";
-import other from "./assets/otherr.jpg";
 
 import Description from "./components/Description";
 import { useEffect, useState } from "react";
@@ -15,7 +13,7 @@ function App() {
   const [city, setCity] = useState("Varanasi");
   const [weather, setWeather]= useState(null);
   const[units, setUnits]=useState("metric");
-  const [bg, setBg] = useState(other);
+  const [bg, setBg] = useState(hotbg);
 
   useEffect(() => {
     const fetchWeatherData=async()=> {
@@ -24,7 +22,9 @@ function App() {
 
     // dynamic background
       const threshold = units === "metric" ? 20 : 60;
-      if(data.temp <=threshold) setBg(coldbg);
+      if(data.temp< 32 ) 
+        if(data.temp< threshold) setBg(coldbg);
+        else setBg(hazebg)
       else setBg(hotbg);
 
     };

@@ -59,8 +59,7 @@ const enterKetPressed = (e) => {
 
 
   return (
-    <div className="app" style={{backgroundImage: `url(${bg})`}}>
-
+    <div className="app" style={{backgroundImage: `url(${bg})`} max-width: 100%;height: auto;>  
       <div className="overlay">
         {
           // now container will render when weather will be there because we put container div in weather 

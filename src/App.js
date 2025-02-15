@@ -12,7 +12,7 @@ import { getInfo } from "./weatherService";
 
 
 function App() {
-  const [city, setCity] = useState("Varanasi");
+  const [city, setCity] = useState("Delhi");
   const [weather, setWeather]= useState(null);
   const[units, setUnits]=useState("metric");
   const [bg, setBg] = useState(hotbg);

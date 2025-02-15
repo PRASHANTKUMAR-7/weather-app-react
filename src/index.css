@@ -9,14 +9,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .app{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-position: center;
     background-size: cover;
 }
 
 .overlay{
-    width:100%;
+    width:100vw;
     height: 100vh;
     background-color:var(--backgroud-overlay)
 }

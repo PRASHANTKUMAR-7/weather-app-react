@@ -47,6 +47,6 @@ The Weather App is a simple and efficient application that provides real-time we
 ## Contributing
 Contributions are welcome! Feel free to fork the repo, create a feature branch, and submit a pull request.
 
-
-
+## License
+This project is licensed under the MIT License.
 

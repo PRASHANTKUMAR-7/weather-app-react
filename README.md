@@ -38,3 +38,15 @@ The Weather App is a simple and efficient application that provides real-time we
 2. Click the search button to fetch weather details.
 3. View temperature, humidity, wind speed, and other weather conditions.
 
+## Future Enhancements
+- Implement a 5-day weather forecast feature
+- Add geolocation support for automatic location detection
+- Improve UI with animations and better styling
+- Include unit conversion (Celsius ↔ Fahrenheit)
+
+## Contributing
+Contributions are welcome! Feel free to fork the repo, create a feature branch, and submit a pull request.
+
+
+
+

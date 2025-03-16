@@ -50,3 +50,7 @@ Contributions are welcome! Feel free to fork the repo, create a feature branch, 
 ## License
 This project is licensed under the MIT License.
 
+## Contact
+For any queries or suggestions, feel free to reach out:
+- GitHub: PRASHANTKUMAR-7
+- Email: prashantkumar74806@gmail.com

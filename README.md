@@ -33,5 +33,8 @@ The Weather App is a simple and efficient application that provides real-time we
    ```sh
    npm start  # if using React or Vue
    ```
-
+## Usage
+1. Enter a city name in the search bar.
+2. Click the search button to fetch weather details.
+3. View temperature, humidity, wind speed, and other weather conditions.
 

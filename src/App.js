@@ -22,44 +22,45 @@ function App() {
       const data= await getInfo(city, units);
       setWeather(data);
 
-    // dynamic background
+      // dynamic background
 
       const threshold = units === "metric" ? 20 : 50;
-      if(data.temp< 32 ) 
-        if(data.temp< threshold) setBg(coldbg);
-        else setBg(hazebg)
-      else setBg(hotbg);
+        if(data.temp< 32 ){ 
+          if(data.temp< threshold) setBg(coldbg);
+          else setBg(hazebg)
+        }
+        else{ setBg(hotbg);}
     };
     // ********************************************************
 
     fetchWeatherData();
   },[units, city]);
 
-// function to handle units dynamically Alt+0176 for ° "degree"
+  // function to handle units dynamically Alt+0176 for ° "degree"
 
-const handleUnitsClick = (e) => {
-  const button = e.currentTarget;
-  const currentUnit = button.innerText.slice(1);
+  const handleUnitsClick = (e) => {
+    const button = e.currentTarget;
+    const currentUnit = button.innerText.slice(1);
 
-  const isCelsius = currentUnit === "C";
-  button.innerText = isCelsius ? "°F" : "°C";
-  setUnits(isCelsius ? "metric" : "imperial");
-};
-// ***********************************************************
+    const isCelsius = currentUnit === "C";
+    button.innerText = isCelsius ? "°F" : "°C";
+    setUnits(isCelsius ? "metric" : "imperial");
+  };
+  // ***********************************************************
 
-// handling test field
+  // handling test field
 
-const enterKetPressed = (e) => {
-  if(e.keyCode === 13){
-    setCity(e.currentTarget.value);
-    e.currentTarget.blur();
-  }
-};
-// *************************************************************
+  const enterKetPressed = (e) => {
+    if(e.keyCode === 13){
+      setCity(e.currentTarget.value);
+      e.currentTarget.blur();
+    }
+  };
+  // *************************************************************
 
 
   return (
-    <div className="app" style={{backgroundImage: `url(${bg})`} max-width: 100%;height: auto;>  
+    <div className="app" style={{backgroundImage: `url(${bg})`}}>  
       <div className="overlay">
         {
           // now container will render when weather will be there because we put container div in weather 
@@ -81,13 +82,13 @@ const enterKetPressed = (e) => {
                 }`}</h1>
               </div>
           </div>
-          {/* bottom description */}
-          <Description weather={weather} units={units} />
+            {/* bottom description */}
+            <Description weather={weather} units={units} />
+          </div>
+        )}
         </div>
-       )}
-      </div>
     </div>
-  );
+  
+  )
 }
-
 export default App;

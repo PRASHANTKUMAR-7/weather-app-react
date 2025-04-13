@@ -306,5 +306,15 @@ new Css
       padding: 0.25rem;
     }
   }
-  
+
+@media screen and (max-width: 240px) {
+  .container { padding: 0.5rem; }
+  .temperature h1 { font-size: 1.8rem; }
+  .icon h3 { font-size: 0.8rem; }
+  .section__inputs > input, .section__inputs > button {
+    font-size: 0.8rem;
+    padding: 0.25rem;
+  }
+}
+
 

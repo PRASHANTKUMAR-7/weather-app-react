@@ -45,7 +45,7 @@
   /* *-*-*-*-*-*-*-*-*
   new css for media querry
   -*-*-*-**-*-*-*-* */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 300px) {
     .section__description {
         grid-template-columns: 1fr;
         gap: 1rem;

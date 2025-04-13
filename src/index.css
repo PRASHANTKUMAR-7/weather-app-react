@@ -148,27 +148,27 @@ html, body {
  /* *-*-*-*-*-*-*-*:-*-*-*-*-*-
  new scc for app and overlay
   *-*-*-*-*-*-*-*-*-*- **-*-*/
-.app {
+  .app {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-position: center;
-    background-size: cover;         /* ✅ scales image to fill screen */
-    background-repeat: no-repeat;   /* ✅ prevents repeating */
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;               /* ✅ prevents scroll breaks */
-}  
-.overlay {
+    /* overflow-x: hidden; Prevent content from spilling out */
+  }
+  .overlay {
     width: 100%;
-    height: 100%; /* ✅ Full height of parent */
+    height: 100vh; /* ✅ Full height of parent */
     background-color: var(--backgroud-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.container {
-    width: 95%;
+  }
+  .container {
+    width: 100%;
     max-width: 600px;
     min-width: 0; /* ✅ prevents hard layout break */
     word-wrap: break-word;
@@ -293,8 +293,9 @@ html, body {
     }
 }
 
-@media screen and (max-width: 240px) {
+@media screen and (max-width: 300px) {
     .container {
+        margin: auto;
       padding: 0.5rem;
     }
   
@@ -313,4 +314,3 @@ html, body {
     }
   }
   
-

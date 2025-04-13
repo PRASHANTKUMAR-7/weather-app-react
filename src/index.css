@@ -118,6 +118,13 @@ new Css
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+  
+  
 
 /* .app {
     width: 100%;
@@ -140,27 +147,23 @@ new Css
   *-*-*-*-*-*-*-*-*-*- **-*-*/
 .app {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: cover;         /* ✅ scales image to fill screen */
+    background-repeat: no-repeat;   /* ✅ prevents repeating */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden; /* Prevent content from spilling out */
-}
-  
-
+    overflow: hidden;               /* ✅ prevents scroll breaks */
+}  
 .overlay {
     width: 100%;
-    min-height: 100vh;
+    height: 100%; /* ✅ Full height of parent */
     background-color: var(--backgroud-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
 .container {
     width: 95%;
     max-width: 600px;
@@ -306,15 +309,5 @@ new Css
       padding: 0.25rem;
     }
   }
-
-@media screen and (max-width: 240px) {
-  .container { padding: 0.5rem; }
-  .temperature h1 { font-size: 1.8rem; }
-  .icon h3 { font-size: 0.8rem; }
-  .section__inputs > input, .section__inputs > button {
-    font-size: 0.8rem;
-    padding: 0.25rem;
-  }
-}
-
+  
 

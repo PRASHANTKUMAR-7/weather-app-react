@@ -1,7 +1,7 @@
 .section__description{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
 .card{
@@ -30,9 +30,38 @@
 
 /*below 1024px we have 2 column code*/
 
- @media screen and (max-width: 1024px){
+ /* @media screen and (min-width: 1024px){
     .section__description{
 
         grid-template-columns: 1fr 1fr;
     }  
- }
+ } */
+ /* @media screen and (max-width: 500px){
+    .section__description{
+
+        grid-template-columns: 1fr ;
+    }  
+ } */
+  /* *-*-*-*-*-*-*-*-*
+  new css for media querry
+  -*-*-*-**-*-*-*-* */
+  @media screen and (max-width: 600px) {
+    .section__description {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 0.75rem;
+    }
+
+    .description__card-icon {
+        gap: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+

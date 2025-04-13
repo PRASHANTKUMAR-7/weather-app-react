@@ -117,12 +117,14 @@ new Css
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    
 }
-
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    
 }
   
   
@@ -201,7 +203,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     background-color: var(--section-overlay);
-    margin-top: 2rem;
+    margin-top: 0.8rem;
     flex-wrap: wrap;
     gap: 1rem;
 }
